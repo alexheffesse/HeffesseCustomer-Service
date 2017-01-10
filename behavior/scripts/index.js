@@ -18,7 +18,15 @@ exports.handle = function handle(client) {
       client.done()
     }
   })
+  const InitClient = require('initai-node')
 
+  function main(eventData, runtimeContext) {
+    const client = InitClient.create(eventData, runtimeContext)
+
+    // ... Configure your conversation logic
+
+    client.done()
+  }
   const untrained = client.createStep({
     satisfied() {
       return false
