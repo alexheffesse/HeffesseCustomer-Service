@@ -5,6 +5,9 @@ const InitClient = require('initai-node')
 function main(eventData, runtimeContext) {
   const client = InitClient.create(eventData, runtimeContext)
 
+      client.done()
+    }
+
 exports.handle = function handle(client) {
   const sayHello = client.createStep({
     satisfied() {
